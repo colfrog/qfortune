@@ -11,7 +11,7 @@ else:
     fortune = 'fortune'
 
 def get_fortune():
-    process = subprocess.Popen([fortune], stdout=subprocess.PIPE)
+    process = subprocess.Popen([fortune] + sys.argv[1:], stdout=subprocess.PIPE)
     output, _ = process.communicate()
     return output.decode()
 
